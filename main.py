@@ -13,10 +13,13 @@ def turn_handler(
 
 def run_interactive_mode(actor: Actor):
     ctx = {}
-    while True:
+    out_response, in_request = "", ""
+    while not out_response.lower().startswith("goodbye"):
         in_request = input("You: ")
         out_response, ctx = turn_handler(in_request, ctx, actor)
         print(f"Bot: {out_response}")
+        
+        
 
 if __name__ == '__main__':
     run_interactive_mode(actor)
