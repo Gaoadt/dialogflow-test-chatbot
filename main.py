@@ -11,6 +11,7 @@ def turn_handler(
     out_response = ctx.last_response
     return out_response, ctx
 
+
 def run_interactive_mode(actor: Actor):
     ctx = {}
     out_response, in_request = "", ""
@@ -18,7 +19,6 @@ def run_interactive_mode(actor: Actor):
         in_request = input("You: ")
         out_response, ctx = turn_handler(in_request, ctx, actor)
         print(f"Bot: {out_response}")
-        
         
 
 if __name__ == '__main__':
